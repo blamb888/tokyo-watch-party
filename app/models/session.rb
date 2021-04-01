@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'opentok'
 
 class Session < ApplicationRecord
@@ -20,7 +22,7 @@ class Session < ApplicationRecord
   end
 
   def self.create_new_session
-    session = @opentok.create_new_session
+    session = @opentok.create_session
     record = Session.new
     record.session_id = session.session_id
     record.save

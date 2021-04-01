@@ -1,6 +1,9 @@
+# frozen_string_literal: true
+
 require 'opentok'
 
 class VideoController < ApplicationController
+  skip_before_action :verify_authenticity_token
   before_action :set_opentok_vars
 
   def set_opentok_vars
@@ -12,13 +15,11 @@ class VideoController < ApplicationController
     @token = Session.create_token(@name, @moderator_name, @session_id)
   end
 
-  def landing; end
-
-  def index; end
-
-  def screenshare
-    @darkmode = 'dark'
+  def json_request?
+    request.format.json?
   end
+
+  def landing; end
 
   def name
     @name = name_params[:name]
@@ -29,7 +30,15 @@ class VideoController < ApplicationController
     end
   end
 
+  def index; end
+
   def chat; end
+
+  def screenshare
+    @darkmode = 'dark'
+  end
+
+  def webhook; end
 
   private
 

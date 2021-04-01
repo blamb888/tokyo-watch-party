@@ -1,6 +1,6 @@
 // screenshare.js
 
-import { screenshareMode } from './app_helpers';
+import { screenshareMode } from './app_helpers.js';
 
 export default class Screenshare {
   constructor(session, name) {
@@ -28,9 +28,9 @@ export default class Screenshare {
     // screen share mode off if clicked off
     // Set click status
     let self = this;
-    this.watchLink.addEventListener('click', function(event) {
+    this.watchLink.addEventListener('click', function (event) {
       event.preventDefault();
-      if(self.clickStatus == 'on') {
+      if (self.clickStatus == 'on') {
         self.clickStatus = 'off';
         screenshareMode(self.session, 'off');
       };
@@ -83,14 +83,14 @@ export default class Screenshare {
     var self = this;
     this.watchLink.style.display = "none";
     this.session.on({
-      streamCreated: function(event) {
+      streamCreated: function (event) {
         console.log(event);
         if (event.stream.hasVideo == true) {
-          self.session.subscribe(event.stream, 'screenshare,' {
+          self.session.subscribe(event.stream, 'screenshare', {
             insertMode: 'append',
-            width: "100%",
-            height: "100%"
-          }, function(error) {
+            width: '100%',
+            height: '100%'
+          }, function (error) {
             if (error) {
               console.error('Failed to subscribe to video feed', error);
             }
@@ -98,9 +98,9 @@ export default class Screenshare {
         } else if (event.stream.hasVideo == false) {
           self.session.subscribe(event.stream, 'audio', {
             insertMode: 'append',
-            width: "0px",
-            height: "0px"
-          }, function(error) {
+            width: '0px',
+            height: '0px'
+          }, function (error) {
             if (error) {
               console.error('Failed to subscribe to audio feed', error);
             }
@@ -109,5 +109,4 @@ export default class Screenshare {
       }
     });
   }
-
 }

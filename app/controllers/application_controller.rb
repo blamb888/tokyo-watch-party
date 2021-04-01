@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ApplicationController < ActionController::Base
   before_action :set_site_lang_options
   before_action :set_site_welcome_options
@@ -15,7 +17,7 @@ class ApplicationController < ActionController::Base
     @welcome_message = CONFIG['landing_page']['welcome_message']['text']
   end
 
-  def set_site_welcome_form_options
+  def set_welcome_form_options
     @name_form_text = CONFIG['landing_page']['name_form']['text']
     @name_placeholder_text = CONFIG['landing_page']['name_form']['name_placeholder_text']
     @password_placeholder_text = CONFIG['landing_page']['name_form']['password_placeholder_text']
