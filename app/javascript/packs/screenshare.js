@@ -1,5 +1,4 @@
 // screenshare.js
-
 import { screenshareMode } from './app_helpers.js';
 
 export default class Screenshare {

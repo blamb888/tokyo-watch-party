@@ -1,14 +1,15 @@
 const emoji = require('node-emoji');
 
-export function screensharMode(session, mode) {
-  if (mode == 'on'){
-    window.location = '/screenshar?name=' + name;
+// Go to screenshare view
+export function screenshareMode(session, mode) {
+  if (mode == 'on') {
+    window.location = '/screenshare?name=' + name;
     session.signal({
       type: 'screenshare',
       data: 'on'
     });
   } else if (mode == 'off') {
-    window.location = '/part?name=' + name;
+    window.location = '/party?name=' + name;
     session.signal({
       type: 'screenshare',
       data: 'off'
@@ -16,6 +17,7 @@ export function screensharMode(session, mode) {
   };
 };
 
+// Set moderator button display
 export function setButtonDisplay(element) {
   if (name == moderator_env_name) {
     element.style.display = "block";
@@ -24,9 +26,10 @@ export function setButtonDisplay(element) {
   };
 };
 
+// Format chat message to include participant name
 export function formatChatMsg(message) {
   var message_arr;
-  message_arr = message.split(' ').map(function(word){
+  message_arr = message.split(' ').map(function (word) {
     if (word.match(/(?:\:)\b(\w*)\b(?=\:)/g)) {
       return word = emoji.get(word);
     } else {
@@ -37,6 +40,7 @@ export function formatChatMsg(message) {
   return `${name}: ${message}`
 };
 
+// Apply relevant CSS class based on number of streams
 export function streamLayout(element, count) {
   if (count >= 6) {
     element.classList.add("grid9");
@@ -46,4 +50,4 @@ export function streamLayout(element, count) {
   } else if (count < 5) {
     element.classList.remove("grid4");
   }
-};
+}

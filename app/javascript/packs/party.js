@@ -1,12 +1,10 @@
-// party.js
-
-import { screensharMode, setButtonDisplay, streamLayout } from './app_helpers';
+import { screenshareMode, setButtonDisplay, streamLayout } from './app_helpers.js';
 
 export default class Party {
   constructor(session) {
     this.session = session;
     this.watchLink = document.getElementById("watch-mode");
-    this.subscribers = document.getElementById('subscribers');
+    this.subscribers = document.getElementById("subscribers");
     this.participantCount = document.getElementById("participant-count");
     this.videoPublisher = this.setupVideoPublisher();
     this.clickStatus = 'off';
@@ -70,13 +68,12 @@ export default class Party {
       }
     });
 
-      this.watchLink.addEventListener('click', function (event) {
-        event.preventDefault();
-        if (self.clickStatus == 'off') {
-          // Go to screenshare view
-          screenshareMode(self.session, 'on');
-        };
-      });
-    }
+    this.watchLink.addEventListener('click', function (event) {
+      event.preventDefault();
+      if (self.clickStatus == 'off') {
+        // Go to screenshare view
+        screenshareMode(self.session, 'on');
+      };
+    });
   }
-
+}

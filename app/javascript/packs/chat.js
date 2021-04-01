@@ -1,5 +1,4 @@
 // chat.js
-
 import { formatChatMsg } from './app_helpers.js';
 
 export default class Chat {
