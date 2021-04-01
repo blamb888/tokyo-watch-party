@@ -23,3 +23,16 @@ export function setButtonDisplay(element) {
     element.style.display = "none";
   };
 };
+
+export function formatChatMsg(message) {
+  var message_arr;
+  message_arr = message.split(' ').map(function(word){
+    if (word.match(/(?:\:)\b(\w*)\b(?=\:)/g)) {
+      return word = emoji.get(word);
+    } else {
+      return word;
+    }
+  })
+  message = message_arr.join(' ');
+  return `${name}: ${message}`
+};
