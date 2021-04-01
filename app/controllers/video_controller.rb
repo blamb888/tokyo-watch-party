@@ -8,18 +8,22 @@ class VideoController < ApplicationController
     @token = Session.create_token(@name, @moderator_name, @session_id)
   end
 
-  def landing
-  end
+  def landing; end
 
-  def index
-  end
+  def index; end
 
   def screenshare
+    @darkmode = 'dark'
   end
 
   def name
+    @name = name_params[:name]
+    if name_params[:password] == ENV['PARTY_PASSWORD']
+      redirect_to party_url(name: @name)
+    else
+      redirect_to('/', flash: { error: 'Incorrect password' })
+    end
   end
 
-  def chat
-  end
+  def chat; end
 end
