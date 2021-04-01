@@ -36,3 +36,14 @@ export function formatChatMsg(message) {
   message = message_arr.join(' ');
   return `${name}: ${message}`
 };
+
+export function streamLayout(element, count) {
+  if (count >= 6) {
+    element.classList.add("grid9");
+  } else if (count == 5) {
+    element.classList.remove("grid9");
+    element.classList.add("grid4");
+  } else if (count < 5) {
+    element.classList.remove("grid4");
+  }
+};
