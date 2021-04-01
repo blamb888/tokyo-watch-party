@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+@import 'button';
+@import 'chat';
+@import 'custom';
+@import 'landing';
+@import 'messages';
+@import 'video';
+
+@media screen and (min-aspect-ratio: 1 / 1) {
+  .chat {
+    width: 20%;
+    min-width: 16em;
+  }
+}
