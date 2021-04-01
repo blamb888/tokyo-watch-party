@@ -1,4 +1,8 @@
+require 'opentok'
+
 class VideoController < ApplicationController
+  before_action :set_opentok_vars
+
   def set_opentok_vars
     @api_key = ENV['OPENTOK_API_KEY']
     @api_secret = ENV['OPENTOK_API_SECRET']
