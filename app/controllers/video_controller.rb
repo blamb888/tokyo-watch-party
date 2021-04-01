@@ -26,4 +26,10 @@ class VideoController < ApplicationController
   end
 
   def chat; end
+
+  private
+
+  def name_params
+    params.permit(:name, :password, :authenticity_token, :commit)
+  end
 end
