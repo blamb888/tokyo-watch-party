@@ -1,18 +1,17 @@
-<script type="text/javascript">
+<script type ="text/javascript">
   var token = '<%= @token %>';
   var name = '<%= @name %>';
   var moderator_env_name = '<%= @moderator_name %>';
-
-// reload page to render with variables
-(function() {
-  if(window.localStorage) {
-    if(!localStorage.getItem('screenshareFirstLoad')) {
-      localStorage['screenshareFirstLoad'] = true;
-      window.location.reload();
+  // reload page to render with variables
+  (function() {
+    if(window.localStorage) {
+      if(!localStorage.getItem('screenshareFirstLoad')) {
+        localStorage['screenshareFirstLoad'] = true;
+        window.location.reload();
     } else
-    localStorage.removeItem('screenshareFirstLoad');
-  }
-})();
+      localStorage.removeItem('screenshareFirstLoad');
+    }
+  })();
 </script>
 
 <header>
@@ -26,7 +25,7 @@
   </div>
 
   <aside class="chat">
-    <%= render partial: 'chate' %>
+    <%= render partial: 'chat' %>
   </aside>
 
   <%= render partial: 'button-chat' %>
