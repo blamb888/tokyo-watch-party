@@ -74,5 +74,17 @@ After you have deployed to Heroku, you will see three config vars in the Heroku 
 
 Alternatively, you can do so from with your Heroku Dashboard's application settings by managing the config vars for your Video Watch Party app after deploying. You will need to add the four environment variables: ```OPENTOK_API_KEY```, ```OPENTOK_API_SECRET```, ```MODERATOR_NAME```, ```PARTY_PASSWORD```.
 
-License
+<h4>Heroku Pro Tip: Continuous Delivery</h4>
+<br>
+You can configure your Heroku app to automatically build and deploy the latest version of your app whenever a new commit is made on your master branch. Which means, your Heroku app will always be in sync with your master. No more git push heroku master and having to wait for the build to complete. A new Heroku build will automatically be triggered after a pull request is merged.
+:check: Here's how to set this up:
+<br>
+<ol>
+  <li>- In your Heroku app's dashboard, select the Deploy tab</li>
+  <li>- In Deployment method, select GitHub</li>
+  <li>- Search and connect your project repository (you might have to first allow Heroku to access your GitHub account)</li>
+  <li>- Click on Enable Automatic Deploys</li>
+</ol>
+
+<h5>License</h5
 This library is released under the MIT License
