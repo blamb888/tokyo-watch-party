@@ -85,6 +85,3 @@ You can configure your Heroku app to automatically build and deploy the latest v
   <li>- Search and connect your project repository (you might have to first allow Heroku to access your GitHub account)</li>
   <li>- Click on Enable Automatic Deploys</li>
 </ol>
-
-<h5>License</h5
-This library is released under the MIT License
