@@ -1,21 +1,27 @@
-Chat with your friends while watching a video together!
+<h1>Chat with your friends while watching a video together!</h1>
 
 This is a video app, which lets people talk via video conferencing, and when ready, the moderator can switch to "Watch Party" mode and share their screen. The "Watch Party" mode will share the moderator's screen, put the site into dark mode and disable everyone's microphones and cameras. Participants can continue to chat via text.
 
-Requirements
+<strong>Requirements</strong>
+<br>
 This app requires Ruby v2.5 or greater and Rails 6.0 or greater.
 
-Installation
+<strong>Installation</strong>
+<br>
 Once you clone the repository, first change into the directory and execute the following commands in your terminal:
+<br>
 ```
 $ bundle install
 $ yarn install
 $ rake db:migrate
 ```
+<br>
 Lastly, rename the ```.env.sample``` file to ```.env``` if needed.
-
-A Note on extra gems:
-This app makes use of the following ```#Added gems```: ```gem 'dotenv-rails'``` ```gem "opentok"```. Please make sure to have these in your ```Gemfile``` and bundle install. ```'dotenv-rails``` is used to help keep your API tokens and secrets safe. ```"opentok"``` is actually the name of the company that produced this API before being incorporated by Vonage.
+<br>
+<br>
+<strong>A Note on extra gems:</strong>
+<br>
+This app makes use of the following ```#Added gems```: ```gem 'dotenv-rails'``` ```gem "opentok"```. Please make sure to have these in your ```Gemfile``` and bundle install. ```'dotenv-rails'``` is used to help keep your API tokens and secrets safe. ```"opentok"``` is actually the name of the company that produced this API before being incorporated by Vonage.
 
 Usage
 To use this app you must sign up for an account with the Vonage Video API. Once you have an account, you can create a new video project. That project will assign you a project level API key and secret. Copy those values into your ```.env``` file in the ```API_KEY``` and ```API_SECRET``` parameters, respectively.
