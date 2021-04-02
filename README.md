@@ -16,11 +16,12 @@ $ yarn install
 $ rake db:migrate
 ```
 Lastly, rename the ```.env.sample``` file to ```.env``` if needed.
-<strong>A Note on extra gems:</strong>
+<h3><strong>A Note on extra gems:</strong></h3>
 <br>
 This app makes use of the following ```#Added gems```: ```gem 'dotenv-rails'``` ```gem "opentok"```. Please make sure to have these in your ```Gemfile``` and bundle install. ```'dotenv-rails'``` is used to help keep your API tokens and secrets safe. ```"opentok"``` is actually the name of the company that produced this API before being incorporated by Vonage.
 
-Usage
+<h3>Usage</h3>
+<br>
 To use this app you must sign up for an account with the Vonage Video API. Once you have an account, you can create a new video project. That project will assign you a project level API key and secret. Copy those values into your ```.env``` file in the ```API_KEY``` and ```API_SECRET``` parameters, respectively.
 
 You also must define a moderator name, which will be used to provide one user with moderator privileges. Those privileges include the ability to switch between video chat and screen share modes. You can define that name in the ```.env``` file within the ```MODERATOR_NAME``` value.
@@ -29,7 +30,8 @@ Lastly, you must set a ```PARTY_PASSWORD``` in your environment variables. This 
 
 Once you have done that, you can start your app locally by running ```bundle exec rails s``` from the command line and navigate to ```localhost:3000``` in your web browser.
 
-Customizing the App
+<h2>Customizing the App</h2>
+<br>
 The app reads from ```/config/site_info.yml``` to gather data such as the website title and the various textual elements of the site. This is entirely customizable.
 
 To edit the data open up ```/config/site_info.yml``` in your code editor. The following options are available:
@@ -56,6 +58,7 @@ text_chat:
 If you do not edit the data in the site_info.yml, the defaults in the file in this repository will be rendered.
 
 <h2>Deploying to Heroku</h2>
+<br>
 
 ```
 heroku login -i
