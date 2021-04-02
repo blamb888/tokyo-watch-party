@@ -39,7 +39,7 @@ The app reads from ```/config/site_info.yml``` to gather data such as the websit
 
 To edit the data open up ```/config/site_info.yml``` in your code editor. The following options are available:
 
-```
+```ruby
 lang: # The ISO 2 letter language code of the site, for example en for American English or he for Hebrew
 lang_direction: # The language direction of the text, values can be either rtl or ltr
 landing_page:
@@ -63,7 +63,7 @@ If you do not edit the data in the site_info.yml, the defaults in the file in th
 <h2>Deploying to Heroku</h2>
 <br>
 
-```
+```ruby
 heroku login -i
 heroku create $YOUR_APP_NAME --region us
 git remote -v
