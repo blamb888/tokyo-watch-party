@@ -15,11 +15,11 @@ $ rake db:migrate
 Lastly, rename the .env.sample file to .env.
 
 Usage
-To use this app you must sign up for an account with the Vonage Video API. Once you have an account, you can create a new video project. That project will assign you a project level API key and secret. Copy those values into your .env file in the API_KEY and API_SECRET parameters, respectively.
+To use this app you must sign up for an account with the Vonage Video API. Once you have an account, you can create a new video project. That project will assign you a project level API key and secret. Copy those values into your .env file in the ```API_KEY``` and ```API_SECRET``` parameters, respectively.
 
-You also must define a moderator name, which will be used to provide one user with moderator privileges. Those privileges include the ability to switch between video chat and screen share modes. You can define that name in the .env file within the MODERATOR_NAME value.
+You also must define a moderator name, which will be used to provide one user with moderator privileges. Those privileges include the ability to switch between video chat and screen share modes. You can define that name in the .env file within the ```MODERATOR_NAME``` value.
 
-Lastly, you must set a PARTY_PASSWORD in your environment variables. This password will be used to allow participants into the application. You can define that value in the .env file within the PARTY_PASSWORD key.
+Lastly, you must set a ```PARTY_PASSWORD``` in your environment variables. This password will be used to allow participants into the application. You can define that value in the .env file within the ```PARTY_PASSWORD``` key.
 
 Once you have done that, you can start your app locally by running bundle exec rails s from the command line and navigate to localhost:3000 in your web browser.
 
@@ -28,6 +28,7 @@ The app reads from /config/site_info.yml to gather data such as the website titl
 
 To edit the data open up /config/site_info.yml in your code editor. The following options are available:
 
+```
 lang: # The ISO 2 letter language code of the site, for example en for American English or he for Hebrew
 lang_direction: # The language direction of the text, values can be either rtl or ltr
 landing_page:
@@ -44,6 +45,8 @@ navbar:
 text_chat:
   submit_button_text: # The text for the chat form submit button, any string of text
   placeholder_text: # The placeholder text for the chat form text form, any string of text
+ ```
+ 
 If you do not edit the data in the site_info.yml, the defaults in the file in this repository will be rendered.
 
 Deploying to Heroku
@@ -51,7 +54,7 @@ You can deploy the application directly from this GitHub repository by clicking 
 
 After you have clicked the above Deploy to Heroku button, you will see three config vars in the Heroku deployment settings. Add your Vonage OpenTok API credentials and moderator name in the appropriate value box for each key before clicking the final Deploy app button. This will ensure your application is deployed to Heroku with your information.
 
-Alternatively, you can do so from with your Heroku Dashboard's application settings by managing the config vars for your Video Watch Party app after deploying. You will need to add the four environment variables: OPENTOK_API_KEY, OPENTOK_API_SECRET, MODERATOR_NAME, PARTY_PASSWORD.
+Alternatively, you can do so from with your Heroku Dashboard's application settings by managing the config vars for your Video Watch Party app after deploying. You will need to add the four environment variables: ```OPENTOK_API_KEY```, ```OPENTOK_API_SECRET```, ```MODERATOR_NAME```, ```PARTY_PASSWORD```.
 
 License
 This library is released under the MIT License
