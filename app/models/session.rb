@@ -1,9 +1,18 @@
-# frozen_string_literal: true
-
 require 'opentok'
 
 class Session < ApplicationRecord
   @opentok = OpenTok::OpenTok.new ENV['OPENTOK_API_KEY'], ENV['OPENTOK_API_SECRET']
+
+
+  def self.create_new_session
+    session = @opentok.create_session
+    record = Session.new
+    record.session_id = session.session_id
+    record.save
+    @session_id = session.session_id
+    @session_id
+  end
+
 
   def self.create_or_load_session_id
     if Session.any?
@@ -19,15 +28,6 @@ class Session < ApplicationRecord
     else
       @session_id = create_new_session
     end
-  end
-
-  def self.create_new_session
-    session = @opentok.create_session
-    record = Session.new
-    record.session_id = session.session_id
-    record.save
-    @session_id = session.session_id
-    @session_id
   end
 
   def self.create_token(user_name, moderator_name, session_id)
