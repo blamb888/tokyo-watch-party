@@ -12,21 +12,24 @@ $ bundle install
 $ yarn install
 $ rake db:migrate
 ```
-Lastly, rename the .env.sample file to .env.
+Lastly, rename the ```.env.sample``` file to ```.env``` if needed.
+
+A Note on extra gems:
+This app makes use of the following ```#Added gems```: ```gem 'dotenv-rails'``` ```gem "opentok"```. Please make sure to have these in your ```Gemfile``` and bundle install. ```'dotenv-rails``` is used to help keep your API tokens and secrets safe. ```"opentok"``` is actually the name of the company that produced this API before being incorporated by Vonage.
 
 Usage
-To use this app you must sign up for an account with the Vonage Video API. Once you have an account, you can create a new video project. That project will assign you a project level API key and secret. Copy those values into your .env file in the ```API_KEY``` and ```API_SECRET``` parameters, respectively.
+To use this app you must sign up for an account with the Vonage Video API. Once you have an account, you can create a new video project. That project will assign you a project level API key and secret. Copy those values into your ```.env``` file in the ```API_KEY``` and ```API_SECRET``` parameters, respectively.
 
-You also must define a moderator name, which will be used to provide one user with moderator privileges. Those privileges include the ability to switch between video chat and screen share modes. You can define that name in the .env file within the ```MODERATOR_NAME``` value.
+You also must define a moderator name, which will be used to provide one user with moderator privileges. Those privileges include the ability to switch between video chat and screen share modes. You can define that name in the ```.env``` file within the ```MODERATOR_NAME``` value.
 
-Lastly, you must set a ```PARTY_PASSWORD``` in your environment variables. This password will be used to allow participants into the application. You can define that value in the .env file within the ```PARTY_PASSWORD``` key.
+Lastly, you must set a ```PARTY_PASSWORD``` in your environment variables. This password will be used to allow participants into the application. You can define that value in the ```.env``` file within the ```PARTY_PASSWORD``` key.
 
-Once you have done that, you can start your app locally by running bundle exec rails s from the command line and navigate to localhost:3000 in your web browser.
+Once you have done that, you can start your app locally by running ```bundle exec rails s``` from the command line and navigate to ```localhost:3000``` in your web browser.
 
 Customizing the App
-The app reads from /config/site_info.yml to gather data such as the website title and the various textual elements of the site. This is entirely customizable.
+The app reads from ```/config/site_info.yml``` to gather data such as the website title and the various textual elements of the site. This is entirely customizable.
 
-To edit the data open up /config/site_info.yml in your code editor. The following options are available:
+To edit the data open up ```/config/site_info.yml``` in your code editor. The following options are available:
 
 ```
 lang: # The ISO 2 letter language code of the site, for example en for American English or he for Hebrew
@@ -50,9 +53,18 @@ text_chat:
 If you do not edit the data in the site_info.yml, the defaults in the file in this repository will be rendered.
 
 Deploying to Heroku
-You can deploy the application directly from this GitHub repository by clicking on the Deploy to Heroku button at the top of this README. Once you do that you still must set your Vonage OpenTok API credentials and information in Heroku. You can either do so at the time you are initializing your application after you have the clicked the Deploy to Heroku button above, or after from within the Heroku Dashboard.
 
-After you have clicked the above Deploy to Heroku button, you will see three config vars in the Heroku deployment settings. Add your Vonage OpenTok API credentials and moderator name in the appropriate value box for each key before clicking the final Deploy app button. This will ensure your application is deployed to Heroku with your information.
+```
+heroku login -i
+heroku create $YOUR_APP_NAME --region us
+git remote -v
+git push heroku master
+heroku run rails db:migrate
+```
+
+Once you do that you still must set your Vonage OpenTok API credentials and information in Heroku. You can either do so at the time you are initializing your application after you have run the commands above, or after from within the Heroku Dashboard.
+
+After you have deployed to Heroku, you will see three config vars in the Heroku deployment settings. Add your Vonage OpenTok API credentials and moderator name in the appropriate value box for each key before clicking the final Deploy app button. This will ensure your application is deployed to Heroku with your information.
 
 Alternatively, you can do so from with your Heroku Dashboard's application settings by managing the config vars for your Video Watch Party app after deploying. You will need to add the four environment variables: ```OPENTOK_API_KEY```, ```OPENTOK_API_SECRET```, ```MODERATOR_NAME```, ```PARTY_PASSWORD```.
 
