@@ -15,10 +15,7 @@ $ bundle install
 $ yarn install
 $ rake db:migrate
 ```
-<br>
 Lastly, rename the ```.env.sample``` file to ```.env``` if needed.
-<br>
-<br>
 <strong>A Note on extra gems:</strong>
 <br>
 This app makes use of the following ```#Added gems```: ```gem 'dotenv-rails'``` ```gem "opentok"```. Please make sure to have these in your ```Gemfile``` and bundle install. ```'dotenv-rails'``` is used to help keep your API tokens and secrets safe. ```"opentok"``` is actually the name of the company that produced this API before being incorporated by Vonage.
@@ -58,7 +55,7 @@ text_chat:
  
 If you do not edit the data in the site_info.yml, the defaults in the file in this repository will be rendered.
 
-Deploying to Heroku
+<h2>Deploying to Heroku</h2>
 
 ```
 heroku login -i
