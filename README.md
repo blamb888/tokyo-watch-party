@@ -2,26 +2,21 @@
 
 This is a video app, which lets people talk via video conferencing, and when ready, the moderator can switch to "Watch Party" mode and share their screen. The "Watch Party" mode will share the moderator's screen, put the site into dark mode and disable everyone's microphones and cameras. Participants can continue to chat via text.
 
-<strong>Requirements</strong>
-<br>
+<h2><strong>Requirements</strong></h2>
 This app requires Ruby v2.5 or greater and Rails 6.0 or greater.
 
-<strong>Installation</strong>
-<br>
+<h2><strong>Installation</strong></h2>
 Once you clone the repository, first change into the directory and execute the following commands in your terminal:
-<br>
 ```
 $ bundle install
 $ yarn install
 $ rake db:migrate
 ```
 Lastly, rename the ```.env.sample``` file to ```.env``` if needed.
-<h3><strong>A Note on extra gems:</strong></h3>
-<br>
+<h3>A Note on extra gems:</h3>
 This app makes use of the following ```#Added gems```: ```gem 'dotenv-rails'``` ```gem "opentok"```. Please make sure to have these in your ```Gemfile``` and bundle install. ```'dotenv-rails'``` is used to help keep your API tokens and secrets safe. ```"opentok"``` is actually the name of the company that produced this API before being incorporated by Vonage.
 
 <h3>Usage</h3>
-<br>
 To use this app you must sign up for an account with the Vonage Video API. Once you have an account, you can create a new video project. That project will assign you a project level API key and secret. Copy those values into your ```.env``` file in the ```API_KEY``` and ```API_SECRET``` parameters, respectively.
 
 You also must define a moderator name, which will be used to provide one user with moderator privileges. Those privileges include the ability to switch between video chat and screen share modes. You can define that name in the ```.env``` file within the ```MODERATOR_NAME``` value.
