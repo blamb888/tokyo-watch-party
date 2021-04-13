@@ -25,10 +25,11 @@
 
 .landing input {
   background-color: #F02A6E;
-  & input:hover {
-    background-color: #f33e7d;
-  }
 }
+
+.landing input:hover {
+    background-color: rgb(233, 51, 115);
+  }
 
 .landing .error {
   color: maroon;
