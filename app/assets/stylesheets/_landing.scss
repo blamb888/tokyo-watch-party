@@ -1,7 +1,11 @@
+.landing_box {
+
+}
 .landing {
   margin: auto;
   text-align: center;
   font-size: 125%;
+  width: 45%;
 }
 
 .landing form {
@@ -14,6 +18,13 @@
 .landing input,
 .landing p {
   margin-bottom: 1em;
+}
+
+.landing input {
+  background-color: #F02A6E;
+  & input:hover {
+    background-color: #f33e7d;
+  }
 }
 
 .landing .error {
