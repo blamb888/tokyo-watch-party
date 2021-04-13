@@ -5,8 +5,8 @@
   --background: white;
   // --bgImage: url(~images/neon-japan-wallpaper_png.png);
   --chat-bg: rgba(255, 255, 255, 0.75);
-  --chat-mine: darkgreen;
-  --chat-theirs: indigo;
+  --chat-mine: #90205c;
+  --chat-theirs: #06050E;
 }
 
 html {
@@ -28,7 +28,6 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  background-color: var(--background);
 }
 
 main {

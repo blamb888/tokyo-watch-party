@@ -5,6 +5,7 @@
   flex: 1;
   display: flex;
   position: relative;
+  height: 100vh !important;
 }
 
 .subscriber.grid4 {
@@ -46,7 +47,9 @@
 
 .dark {
   --background: black;
-  --chat-mine: lime;
-  --chat-theirs: violet;
+  --chat-mine: rgb(36, 32, 32);
+  --chat-theirs: rgb(136, 9, 87);
   --txt: white;
+  text-shadow: 4px;
+  font-weight: 200;
 }
