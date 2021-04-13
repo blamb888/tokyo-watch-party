@@ -3,7 +3,7 @@
   --txt-alt: white;
   --txt: black;
   --background: white;
-  --bgImage: url(~images/tokyo.jpg);
+  --bgImage: url(~images/neon-japan-wallpaper_png.png);
   --chat-bg: rgba(255, 255, 255, 0.75);
   --chat-mine: darkgreen;
   --chat-theirs: indigo;
@@ -27,7 +27,6 @@ body {
   display: flex;
   flex-direction: column;
   background-color: var(--background);
-  background-image: var(--bgImage);
   overflow: hidden;
 }
 
@@ -37,7 +36,6 @@ main {
   position: relative;
   align-items: center;
   justify-content: center;
-  background: url('./../images/tokyo.jpg');
   background-size: cover;
 }
 
