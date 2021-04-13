@@ -3,7 +3,7 @@
   --txt-alt: white;
   --txt: black;
   --background: white;
-  // --bgImage: url('~images/01.png');
+  --bgImage: url(~images/tokyo.jpg);
   --chat-bg: rgba(255, 255, 255, 0.75);
   --chat-mine: darkgreen;
   --chat-theirs: indigo;
@@ -36,7 +36,9 @@ main {
   display: flex;
   position: relative;
   align-items: center;
-  justify-content: center
+  justify-content: center;
+  background: url('./../images/tokyo.jpg');
+  background-size: cover;
 }
 
 input {
