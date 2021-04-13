@@ -3,7 +3,7 @@
   --txt-alt: white;
   --txt: black;
   --background: white;
-  --bgImage: url(~images/neon-japan-wallpaper_png.png);
+  // --bgImage: url(~images/neon-japan-wallpaper_png.png);
   --chat-bg: rgba(255, 255, 255, 0.75);
   --chat-mine: darkgreen;
   --chat-theirs: indigo;
@@ -27,8 +27,8 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
-  background-color: var(--background);
   overflow: hidden;
+  background-color: var(--background);
 }
 
 main {
@@ -37,7 +37,6 @@ main {
   position: relative;
   align-items: center;
   justify-content: center;
-  background-size: cover;
 }
 
 input {
@@ -65,4 +64,9 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.style_image {
+  height: 100vh;
+  z-index: 0;
 }
